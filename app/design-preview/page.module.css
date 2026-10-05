@@ -1,0 +1,102 @@
+.previewPage {
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 40px);
+  overflow-wrap: anywhere;
+}
+
+.pageHeader {
+  max-width: 52rem;
+  margin-bottom: 24px;
+}
+
+.pageHeader h1 {
+  color: #1a1d21;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.pageHeader p {
+  color: #4a5058;
+}
+
+.eyebrow {
+  font-weight: 650;
+}
+
+.previewNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 16px;
+}
+
+.previewLink {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 2px solid #1e4f6e;
+  border-radius: 8px;
+  color: #1e4f6e;
+  background: #ffffff;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.previewLink:focus-visible {
+  outline: 3px solid #0b5cd5;
+  outline-offset: 3px;
+}
+
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.themeCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  background: var(--color-surface-primary);
+}
+
+.themeCard h2 {
+  margin: 0 0 4px;
+  color: var(--color-text-primary);
+}
+
+.themeCard p {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.badgeStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.note {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .themeGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

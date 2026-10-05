@@ -1,0 +1,278 @@
+.themeScope {
+  --color-text-primary: #1a1d21;
+  --color-text-secondary: #4a5058;
+  --color-text-muted: #5f6670;
+  --color-surface-canvas: #f4f5f2;
+  --color-surface-primary: #ffffff;
+  --color-border-control: #7d847b;
+  --color-border-subtle: #d5d8d2;
+  --color-action-platform: #1e4f6e;
+  --color-focus-ring: #0b5cd5;
+  --color-status-info: #1e5aa8;
+  --color-status-info-surface: #eaf1fb;
+  --color-status-success: #1f7a3d;
+  --color-status-success-surface: #e8f5ec;
+  --color-status-warning: #8a5100;
+  --color-status-warning-surface: #fff4e0;
+  --color-status-error: #b42318;
+  --color-status-error-surface: #fdecea;
+  --color-status-neutral: #4a5058;
+  --color-status-neutral-surface: #eceeea;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  --radius-pill: 999px;
+  --target-customer: 48px;
+  --target-operator: 44px;
+  --font-family-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-size-display: 32px;
+  --font-size-title: 24px;
+  --font-size-heading: 18px;
+  --font-size-body: 16px;
+  --font-size-operator: 15px;
+  --font-size-label: 14px;
+  --font-size-caption: 13px;
+  --icon-grid: 24px;
+  --icon-stroke: 2px;
+  --elevation-0: none;
+  --elevation-1: 0 1px 2px rgba(26, 29, 33, 0.08);
+  --elevation-2: 0 4px 12px rgba(26, 29, 33, 0.12);
+  --elevation-3: 0 12px 32px rgba(26, 29, 33, 0.16);
+  --brand-primary: #1e4f6e;
+  --brand-action: #1e4f6e;
+  --brand-accent: #0e7c86;
+  --brand-on-primary: #ffffff;
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-reduced: 0ms;
+  --layer-base: 0;
+  --layer-sticky: 100;
+  --layer-cart-bar: 200;
+  --layer-popover: 300;
+  --layer-dialog: 400;
+  --layer-toast: 500;
+  min-width: 0;
+  color: var(--color-text-primary);
+  background: var(--color-surface-canvas);
+  font-family: var(--font-family-ui);
+  font-size: var(--font-size-body);
+}
+
+.themeScope[data-restaurant-theme="hibiscus"] {
+  --brand-primary: #e4572e;
+  --brand-action: #b83e1c;
+  --brand-accent: #0e7c86;
+  --brand-on-primary: #1a1d21;
+}
+
+.themeScope[data-restaurant-theme="marigold"] {
+  --brand-primary: #f2a900;
+  --brand-action: #7a4e00;
+  --brand-accent: #2f6b3a;
+  --brand-on-primary: #1a1d21;
+}
+
+.identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.logoFrame {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface-primary);
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-1);
+}
+
+.monogram {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: var(--brand-primary);
+  color: var(--brand-on-primary);
+  font-size: var(--font-size-heading);
+  font-weight: 750;
+}
+
+.identityName {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+}
+
+.actionButton {
+  display: inline-flex;
+  min-width: var(--target-customer);
+  min-height: var(--target-customer);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid transparent;
+  border-radius: var(--radius-medium);
+  font: inherit;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--motion-fast) ease-out,
+    color var(--motion-fast) ease-out,
+    border-color var(--motion-fast) ease-out;
+}
+
+.actionButton:focus-visible,
+.identity:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+.actionPrimary {
+  color: var(--color-surface-primary);
+  background: var(--brand-action);
+}
+
+.actionPrimary:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.actionSecondary {
+  color: var(--brand-action);
+  border-color: var(--brand-action);
+  background: var(--color-surface-primary);
+}
+
+.actionSecondary:hover:not(:disabled) {
+  background: var(--color-surface-canvas);
+}
+
+.actionDestructive {
+  color: var(--color-status-error);
+  border-color: var(--color-status-error);
+  background: var(--color-surface-primary);
+}
+
+.actionDestructive:hover:not(:disabled) {
+  background: var(--color-status-error-surface);
+}
+
+.actionCompact {
+  min-width: var(--target-operator);
+  min-height: var(--target-operator);
+}
+
+.actionButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border: 1px solid currentcolor;
+  border-radius: var(--radius-medium);
+  font-size: var(--font-size-caption);
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.badgeFulfillment {
+  color: var(--color-status-info);
+  background: var(--color-status-info-surface);
+}
+
+.badgePayment {
+  color: var(--color-status-success);
+  background: var(--color-status-success-surface);
+}
+
+.badgeNeutral {
+  color: var(--color-status-neutral);
+  background: var(--color-status-neutral-surface);
+}
+
+.previewCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-large);
+  background: var(--color-surface-primary);
+}
+
+.previewTitle {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+}
+
+.previewText {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.switcherPanel {
+  display: flex;
+  width: min(100%, 42rem);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-block: var(--space-8);
+  padding: var(--space-4);
+  border: 1px dashed var(--color-border-control);
+  border-radius: var(--radius-large);
+  background: var(--color-surface-primary);
+}
+
+.switcherPanel h2,
+.switcherPanel p {
+  margin: 0;
+}
+
+.switcherPanel p {
+  color: var(--color-text-secondary);
+}
+
+.previewActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .actionButton {
+    scroll-behavior: auto;
+    transition-duration: var(--motion-reduced);
+  }
+}

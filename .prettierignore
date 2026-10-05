@@ -1,0 +1,16 @@
+node_modules
+.next
+.next-*
+out
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml
+next-env.d.ts
+README.md
+AGENTS.md
+CLAUDE.md
+docs
+.github
+.codex
+.mcp.json

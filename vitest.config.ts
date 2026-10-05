@@ -12,7 +12,9 @@ export default defineConfig({
   },
   test: {
     environment: "node",
-    include: ["tests/{foundation,design-system,domain}/**/*.test.{ts,tsx}"],
+    include: [
+      "tests/{foundation,design-system,domain,storefront}/**/*.test.{ts,tsx}",
+    ],
     clearMocks: true,
   },
 });

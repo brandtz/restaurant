@@ -70,3 +70,16 @@ test("design-only preview is not served by the production application", async ({
   const response = await request.get("/design-preview");
   expect(response.status()).toBe(404);
 });
+
+test("prototype storefront is hidden unless explicitly enabled", async ({
+  request,
+}) => {
+  for (const path of [
+    "/order/lani-moku-grill",
+    "/order/lani-moku-grill/springfield",
+    "/order/lani-moku-grill/springfield/cart",
+  ]) {
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(404);
+  }
+});

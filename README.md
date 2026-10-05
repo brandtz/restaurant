@@ -21,6 +21,26 @@ readiness. It exposes no credentials, project IDs or connection strings.
 accessibility primitives, not a live store or ordering actions. Production
 environments return 404 for this preview route.
 
+### Lani Moku storefront prototype (D-020)
+
+A clickable, fixture-backed pickup storefront for the first pilot target
+lives at `/order/lani-moku-grill` (location picker → menu → item options →
+cart). It uses labeled, unverified sample data from public listings, places
+no orders and takes no payment. It is hidden (404) unless
+`DEMO_STOREFRONT_ENABLED=1` is set, and never served in production.
+
+```powershell
+Copy-Item .env.example .env.local   # sets DEMO_STOREFRONT_ENABLED=1
+pnpm dev
+# open http://localhost:3000/order/lani-moku-grill
+pnpm test:e2e:storefront            # isolated build on 127.0.0.1:3221
+```
+
+To QA on a phone on the same network, run `pnpm dev --hostname 0.0.0.0`
+and open `http://<this-PC-IP>:3000/order/lani-moku-grill`. Screens read
+through `StorefrontDataSource` (`src/storefront/data-source.ts`); the
+backend replaces the fixture source with published database data later.
+
 ```powershell
 pnpm check
 pnpm build

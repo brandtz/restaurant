@@ -20,6 +20,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:design": "node scripts/run-design-preview-e2e.mjs",
+    "test:e2e:storefront": "node scripts/run-storefront-demo-e2e.mjs",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test"
   },
   "dependencies": {

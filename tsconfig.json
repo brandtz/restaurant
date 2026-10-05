@@ -30,7 +30,9 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     ".next-design-preview/types/**/*.ts",
-    ".next-design-preview/dev/types/**/*.ts"
+    ".next-design-preview/dev/types/**/*.ts",
+    ".next-storefront-demo/types/**/*.ts",
+    ".next-storefront-demo/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules", "docs"]
 }

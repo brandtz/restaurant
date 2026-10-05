@@ -23,7 +23,7 @@ const free = usd(0);
 export const laniMokuMerchant: StorefrontMerchantView = {
   slug: "lani-moku-grill",
   name: "Lani Moku Grill",
-  themeId: "hibiscus",
+  themeId: "lani-moku",
   logo: null,
   currency: "USD",
 };

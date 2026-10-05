@@ -23,6 +23,14 @@ environments return 404 for this preview route.
 
 ### Lani Moku storefront prototype (D-020)
 
+A replacement-site preview now lives at `/lani-moku-grill`; `/` redirects
+there only when the non-production demo is enabled. It includes original
+teal/coral styling, tropical illustrations and separate Springfield/Eugene
+location pages. Order buttons lead into the pickup prototype below.
+The existing Wix implementation, proprietary artwork, stock assets and
+merchant logo were not copied. Merchant-approved assets can replace the
+name fallback and photo placeholders later.
+
 A clickable, fixture-backed pickup storefront for the first pilot target
 lives at `/order/lani-moku-grill` (location picker → menu → item options →
 cart). It uses labeled, unverified sample data from public listings, places
@@ -40,6 +48,27 @@ To QA on a phone on the same network, run `pnpm dev --hostname 0.0.0.0`
 and open `http://<this-PC-IP>:3000/order/lani-moku-grill`. Screens read
 through `StorefrontDataSource` (`src/storefront/data-source.ts`); the
 backend replaces the fixture source with published database data later.
+
+### Menu photos (CP-033 prototype)
+
+`/demo-admin/lani-moku-grill/menu` is a **demo editor, not authenticated
+admin access**. Choose a location/item, select a local JPEG/PNG/WebP,
+describe it for screen readers, and preview, replace or remove it. Photos
+appear in the homepage favorites, ordering menu, item detail and cart.
+Every item supports an optional image and a missing/broken-image fallback.
+
+These changes exist only in the currently loaded browser app. No file is
+uploaded, saved on the server or published; reload and other tabs/visitors
+do not retain them. Client-side prototype checks allow 5 MB per image,
+320–4096 pixels per side and up to 30 MB total previews. These are demo
+limits, not a merchant-approved production upload policy.
+
+Real photo management requires the O-012/O-014/O-018 follow-up: verified
+editor permissions, tenant-owned storage, trusted byte/type/dimension
+validation, metadata stripping/re-encoding, safe image delivery, asset
+references in menu drafts, audited publication and replacement cleanup.
+Neon should hold image metadata/references, not uploaded image binaries.
+No storage provider or new dependency is selected by this prototype.
 
 ```powershell
 pnpm check

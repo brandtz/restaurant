@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { findMenuItem } from "@/storefront/cart";
+import { ProductPhoto } from "@/storefront/components/ProductPhoto";
 import { getStorefrontDataSource } from "@/storefront/data-source";
 import { formatMoney } from "@/storefront/format";
 import { currentTime, openStatus } from "@/storefront/hours";
@@ -131,6 +132,11 @@ export default async function LocationMenuPage({
                       .join(" ")}
                     key={item.id}
                   >
+                    <ProductPhoto
+                      merchantSlug={merchant.slug}
+                      locationSlug={location.slug}
+                      item={item}
+                    />
                     <div className={styles.itemTop}>
                       <h3>{item.name}</h3>
                       <span className={styles.price}>

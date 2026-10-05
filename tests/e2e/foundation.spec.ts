@@ -78,6 +78,9 @@ test("prototype storefront is hidden unless explicitly enabled", async ({
     "/order/lani-moku-grill",
     "/order/lani-moku-grill/springfield",
     "/order/lani-moku-grill/springfield/cart",
+    "/lani-moku-grill",
+    "/lani-moku-grill/eugene",
+    "/demo-admin/lani-moku-grill/menu",
   ]) {
     const response = await request.get(path);
     expect(response.status(), path).toBe(404);

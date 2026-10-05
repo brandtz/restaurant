@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { findMenuItem } from "@/storefront/cart";
 import { ItemConfigurator } from "@/storefront/components/ItemConfigurator";
+import { ProductPhoto } from "@/storefront/components/ProductPhoto";
 import { getStorefrontDataSource } from "@/storefront/data-source";
 import { formatMoney } from "@/storefront/format";
 import { storefrontPaths } from "@/storefront/paths";
@@ -52,6 +53,11 @@ export default async function MenuItemPage({ params }: { params: Params }) {
         ← Back to menu
       </Link>
       <h1 className={styles.title}>{item.name}</h1>
+      <ProductPhoto
+        merchantSlug={merchantSlug}
+        locationSlug={locationSlug}
+        item={item}
+      />
       <p className={styles.price}>{formatMoney(item.basePrice)}</p>
       {item.description ? (
         <p className={styles.lede}>{item.description}</p>

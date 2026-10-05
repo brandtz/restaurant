@@ -1,4 +1,10 @@
+import { redirect } from "next/navigation";
+import { isDemoStorefrontEnabled } from "@/storefront/demo-gate";
+
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
+  if (isDemoStorefrontEnabled(process.env)) redirect("/lani-moku-grill");
   return (
     <main id="main" tabIndex={-1}>
       <header>

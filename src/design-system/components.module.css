@@ -81,6 +81,13 @@
   --brand-on-primary: #1a1d21;
 }
 
+.themeScope[data-restaurant-theme="lani-moku"] {
+  --brand-primary: #55b0b0;
+  --brand-action: #176568;
+  --brand-accent: #b74252;
+  --brand-on-primary: #1a1d21;
+}
+
 .identity {
   display: flex;
   min-width: 0;

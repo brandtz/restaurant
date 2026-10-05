@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { RestaurantIdentity, RestaurantTheme } from "@/design-system";
+import { RestaurantTheme } from "@/design-system";
+import { SiteHeader } from "@/storefront/components/SiteHeader";
 import { getStorefrontDataSource } from "@/storefront/data-source";
-import { storefrontPaths } from "@/storefront/paths";
 import styles from "@/storefront/storefront.module.css";
 
 export const dynamic = "force-dynamic";
@@ -30,21 +29,7 @@ export default async function MerchantStorefrontLayout({
           is taken.
         </p>
       ) : null}
-      <header className={styles.header}>
-        <div className={styles.headerInner}>
-          <Link
-            className={styles.identityLink}
-            href={storefrontPaths(merchant.slug).merchant}
-          >
-            <RestaurantIdentity
-              logo={merchant.logo}
-              name={merchant.name}
-              restaurantKey={merchant.slug}
-              themeId={merchant.themeId}
-            />
-          </Link>
-        </div>
-      </header>
+      <SiteHeader merchant={merchant} />
       <main className={styles.page} id="main" tabIndex={-1}>
         {children}
       </main>

@@ -52,6 +52,13 @@ export type ModifierGroupView = Readonly<{
   options: readonly ModifierOptionView[];
 }>;
 
+export type MenuItemImageView = Readonly<{
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}>;
+
 export type MenuItemView = Readonly<{
   id: string;
   name: string;
@@ -60,6 +67,7 @@ export type MenuItemView = Readonly<{
   available: boolean;
   dietaryLabels: readonly string[];
   modifierGroups: readonly ModifierGroupView[];
+  image?: MenuItemImageView | null;
 }>;
 
 export type MenuCategoryView = Readonly<{

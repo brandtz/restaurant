@@ -8,6 +8,7 @@ import { formatMoney } from "../format";
 import styles from "../storefront.module.css";
 import type { PublishedMenuView } from "../view-models";
 import { QuantityStepper } from "./QuantityStepper";
+import { ProductPhoto } from "./ProductPhoto";
 
 export function CartView({
   menu,
@@ -58,6 +59,14 @@ export function CartView({
           const name = item?.name ?? "Unavailable item";
           return (
             <li className={styles.card} key={line.lineId}>
+              {item ? (
+                <ProductPhoto
+                  merchantSlug={menu.merchantSlug}
+                  locationSlug={menu.locationSlug}
+                  item={item}
+                  compact
+                />
+              ) : null}
               <div className={styles.itemTop}>
                 <h2>{name}</h2>
                 <span className={styles.price}>

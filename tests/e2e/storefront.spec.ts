@@ -94,10 +94,14 @@ test("local item-photo editor previews, describes, replaces and removes photos w
   await page
     .getByRole("link", { name: "Preview Teriyaki Chicken on the storefront" })
     .click();
+  await expect(page).toHaveURL(
+    new RegExp(`${landing}/springfield/item/teriyaki-chicken$`),
+  );
   await expect(
     page.getByRole("img", { name: "Teriyaki chicken and rice" }),
   ).toBeVisible();
   await page.getByRole("link", { name: "Back to menu", exact: false }).click();
+  await expect(page).toHaveURL(new RegExp(`${landing}/springfield$`));
   await expect(
     page.getByRole("img", { name: "Teriyaki chicken and rice" }),
   ).toBeVisible();
@@ -110,6 +114,10 @@ test("local item-photo editor previews, describes, replaces and removes photos w
     .getByRole("button", { name: "Add to cart · $10.00", exact: true })
     .click();
   await page.getByRole("link", { name: /View cart/ }).click();
+  await expect(page).toHaveURL(new RegExp(`${landing}/springfield/cart$`));
+  await expect(
+    page.getByRole("heading", { name: "Your cart", level: 1 }),
+  ).toBeVisible();
   await expect(
     page.getByRole("img", { name: "Teriyaki chicken and rice" }),
   ).toBeVisible();
@@ -118,6 +126,7 @@ test("local item-photo editor previews, describes, replaces and removes photos w
     .getByRole("link", { name: "Home", exact: true })
     .click();
   await page.getByRole("link", { name: "Photo editor demo" }).click();
+  await expect(page).toHaveURL(/\/demo-admin\/lani-moku-grill\/menu$/);
   await expect(
     page.getByRole("img", { name: "Teriyaki chicken and rice" }),
   ).toBeVisible();
